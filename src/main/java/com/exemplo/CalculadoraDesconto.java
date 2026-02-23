@@ -10,7 +10,8 @@ public class CalculadoraDesconto {
             throw new IllegalArgumentException("percentualDesconto deve estar entre 0 e 50");
         }
 
-        double valorFinal = valorCompra - (valorCompra * (percentualDesconto / 100.0));
+        double percentualEmFracao = percentualDesconto / 100.0;
+        double valorFinal = valorCompra - (valorCompra * percentualEmFracao);
         return Math.max(0.0, valorFinal);
     }
 }
